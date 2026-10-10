@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import cv2
 import numpy as np
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 app.secret_key = os.environ.get("SECRET_KEY", "replace-this-secret")
 DATA_DIR = os.environ.get("DATA_DIR", os.path.join(os.path.dirname(__file__), "data"))
 os.makedirs(DATA_DIR, exist_ok=True)
